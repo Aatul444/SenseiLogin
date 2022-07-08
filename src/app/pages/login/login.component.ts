@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { SusersDataService } from 'src/app/services/users/susers-data.service';
 import { FormGroup, FormControl, FormControlName, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CanComponentLeave } from 'src/app/auths/GcanDeactivate/un-saved-changes-guard.guard';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, CanComponentLeave {
+  
 loader=false;
   adminDetails:any;
 
@@ -18,9 +20,10 @@ canExit():boolean{
   {return true}
   else{return false}
 }
-canDeactivate():boolean{
-if(confirm('Do u wish')){return true}
-else{return false}
+canLeave():boolean{
+  if(this.loginForm.dirty){window.confirm('Surely')}
+  else{return true;}  
+  return true;
 }
 
   loginForm = new FormGroup({
