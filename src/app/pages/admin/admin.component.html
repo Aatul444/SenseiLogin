@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="card">
+      <div class="name"> {{adminDataObj.first_name}} {{adminDataObj.last_name}}</div>
+      <hr/>viyasob266@funboxcn.com
+      <div class="title">User Details</div>
+      <div class="email">{{adminDataObj.email_address}}</div>
+      <div class="phone"> {{adminDataObj.phone}}</div>
+      <button class="logout" (click)="logout()" *ngIf="logout">logout</button>
+      <div class="card-back"></div>
+      <div class="card-front"></div>
+      <div class="card2">
+        <div class="card-pink"></div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="circle1"></div>
+  <div class="circle2"></div>
+  <div class="circle3"></div>
+  <div class="circle4"></div>
+  <div class="circle5"></div>
+  <div class="circle6"></div>
+  <div class="circle7"></div>
+  <div class="circle8">  </div> -->

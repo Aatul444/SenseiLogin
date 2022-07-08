@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="container" *ngIf="!loader">
+	<div class="card">
+		<div class="cardImage">
+		</div>
+		<form class="formCard" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+			<div class="input">
+				<input type="text" class="inputField" formControlName="email" required />
+				<label class="label">Email</label>
+			</div>
+			<div class="input">
+				<input type="password" class="inputField" formControlName="password" required />
+				<label class="label">Password</label>
+			</div>
+			<div class="action">
+				<button class="loginButton">Login</button>
+			</div>
+		</form>
+		<div class="cardFooter">
+			<p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+		</div>
+	</div>
+</div>
+<div class="loader" *ngIf="loader">
+	<div><img src="../../../assets/loader.gif" alt="not found"></div>
+</div>
